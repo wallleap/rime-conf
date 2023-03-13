@@ -8,6 +8,7 @@ sort: by_weight
 vocabulary: essay-zh-hans
 use_preset_vocabulary: true
 import_tables:
+  - dicts/simp
   - dicts/sougou_own
   - dicts/common_words
   - dicts/flypyfz_zh
