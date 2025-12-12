@@ -55,6 +55,8 @@ engine:
     - script_translator
     - table_translator@custom_phrase # 用户自定义词典
     - lua_translator@date_translator # 动态日期时间输入
+    - table_translator@user_history # 用户历史词汇
+    - lua_translator@user_learning_translator # 用户习惯学习
   filters:
     - simplifier@emoji_suggestion
     - simplifier
@@ -201,3 +203,13 @@ custom_phrase:
   enable_completion: false
   enable_sentence: true
   initial_quality: 1
+
+user_history:
+  dictionary: ""
+  user_dict: user_history
+  db_class: userdb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 10
+  enable_user_dict: true
+  record_history: true

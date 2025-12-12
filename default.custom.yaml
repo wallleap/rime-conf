@@ -2,6 +2,11 @@ patch:
   schema_list:
     - schema: double_pinyin_flypy
   menu/page_size: 4 # 候选项数
+  # 用户习惯学习配置
+  "translator/enable_user_dict": true
+  "translator/enable_sentence": true
+  "translator/max_phrase_length": 10
+  "translator/initial_quality": 10
   "ascii_composer/good_old_caps_lock": false
   "ascii_composer/switch_key":
     Caps_Lock: noop

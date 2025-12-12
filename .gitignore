@@ -3,5 +3,12 @@ user.yaml
 installation.yaml
 extended.userdb/
 luna_pinyin.userdb
+terra_pinyin.userdb
+user_history.userdb/
 build/
 default.userdb/
+user_history.txt
+sync/
+*.log
+*.bak
+*.tmp

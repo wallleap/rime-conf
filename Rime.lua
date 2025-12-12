@@ -14,3 +14,19 @@ function date_translator(input, seg)
     local translator = load_date_translator()
     return translator(input, seg)
 end
+
+-- user_learning: 用户习惯学习模块
+-- 文件在 `lua/user_learning.lua`
+local user_learning_module = nil
+
+local function load_user_learning()
+    if not user_learning_module then
+        user_learning_module = require("user_learning")
+    end
+    return user_learning_module
+end
+
+function user_learning_translator(input, seg)
+    local learning = load_user_learning()
+    return learning(input, seg)
+end
