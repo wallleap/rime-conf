@@ -14,6 +14,8 @@
 - [x] 添加 `/` 加 `fh` 显示符号之类的操作
 - [x] 支持使用 <kbd>【</kbd>/<kbd>】</kbd>、<kbd>Control</kbd> + <kbd>j</kbd>/<kbd>k</kbd> 切换上/下页  
 - [x] 支持时间和日期动态输入  
+- [x] 支持 uuid 动态输入
+- [x] 支持用户自定义学习词库，记录用户输入习惯
 
 ## 使用方法
 
@@ -59,6 +61,7 @@ git clone git@github.com:wallleap/rime-conf.git
 - <kbd>⌃</kbd> + <kbd>j</kbd> 下翻页
 
 选词除了使用数字和空格之外，可以使用：
+
 - `;` 选择第二个词
 - `'` 选择第三个词
 - `,` 选择第四个词
@@ -75,4 +78,20 @@ git clone git@github.com:wallleap/rime-conf.git
 
 ## 输入当前时间
 
-直接输入 `date`、`time`、`week` 之后选词
+直接输入 `time`、`date`、`datetime`、`week`、`month` 即可选择当前时间、日期、日期时间、星期、月份
+
+可以输入 `timestamp` 获取当前时间戳
+
+## 生成 UUID
+
+输入 `uuid` 即可生成一个新的 UUID
+
+## 自定义短语
+
+重命名 `custom_phrase.example.txt` 为 `custom_phrase.txt`，并在里面添加自定义短语
+
+一行一个，格式为 `上屏文字` + `缩写` + `权重`，中间用 `Tab` 键分开，例如：
+
+```
+世界地图  sjdt  2
+```

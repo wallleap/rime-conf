@@ -13,3 +13,6 @@ sync/
 backup_*/
 data/
 opencc/*.json
+
+# 用户自定义短语文件
+custom_phrase.txt
