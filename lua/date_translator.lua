@@ -17,6 +17,11 @@ local function date_translator(input, seg)
         yield(Candidate("datetime", seg.start, seg._end, os.date("%Y%m%d%H%M"), ""))
     end
 
+    -- 获取时间戳
+    if (input == "timestamp") then
+        yield(Candidate("timestamp", seg.start, seg._end, os.time(), ""))
+    end
+
     -- 输入星期
     -- -- @JiandanDream
     -- -- https://github.com/KyleBing/rime-wubi86-jidian/issues/54
