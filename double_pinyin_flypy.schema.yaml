@@ -57,6 +57,7 @@ engine:
     - lua_translator@date_translator # 动态日期时间输入
     - table_translator@user_history # 用户历史词汇
     - lua_translator@user_learning_translator # 用户习惯学习
+    - lua_translator@uuid_translator # UUID 输入
   filters:
     - simplifier@emoji_suggestion
     - simplifier
