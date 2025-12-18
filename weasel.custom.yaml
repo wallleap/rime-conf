@@ -1,8 +1,8 @@
 patch:
   style:
-    horizontal: true          # 候選橫排
-    inline_preedit: true      # 內嵌編碼（僅支持TSF）
-    display_tray_icon: false  # 顯示托盤圖標
+    horizontal: true          # 候选横排
+    inline_preedit: true      # 内嵌编码（仅支持TSF）
+    display_tray_icon: false  # 显示托盘图标
     layout:
       border: 0
       margin_x: 12
@@ -12,23 +12,23 @@ patch:
       spacing: 12
       candidate_spacing: 24
       round_corner: 8
-    color_scheme: blue
+    color_scheme: green       # 切换为绿色主题
   preset_color_schemes:
-    blue:
-      name: "蓝色／blue"
-      author: "web"
+    green:                    # 绿色主题配置
+      name: "绿色／green"
+      author: "modified"
       candidate_format: "%c\u2005%@" # 编号 %c 和候选词 %@ 前后的空间
-      font_face: "-apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif" # 候选词字体
-      font_point: 16 # 候选字词大小
-      label_font_face: "PingFangSC" # 候选词编号字体
-      label_font_point: 12 # 候选编号大小
-      back_color: 0xFFFFFF # 候选条背景色，24位色值，16进制，ABGR顺序
-      border_color: 0xFCF4EB # 边框颜色
-      candidate_text_color: 0x2E2E2E # 预选项文字颜色
-      comment_text_color: 0xE0E0E0 # 拼音等提示文字颜色
-      hilited_candidate_label_color: 0xFFDEA6 # 候选编号颜色
-      hilited_candidate_text_color: 0xF4953C # 候选文字颜色
-      hilited_candidate_back_color: 0xFCF4EB # 候选文字背景色
-      label_color: 0xE0E0E0 # 预选栏编号颜色
-      text_color: 0x2E2E2E # 高亮选中词颜色
-      
+      font_face: "-apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif"
+      font_point: 16
+      label_font_face: "PingFangSC"
+      label_font_point: 12
+      back_color: 0xFFFFFF                # 候选条背景保持白色，增强对比
+      border_color: 0xE6F4EA              # 浅绿色边框
+      candidate_text_color: 0x333333      # 候选文字深灰色，清晰可读
+      comment_text_color: 0xA0A0A0        # 提示文字浅灰色
+      hilited_candidate_label_color: 0xFFFFFF # 选中项编号白色
+      hilited_candidate_text_color: 0xFFFFFF  # 选中项文字白色
+      hilited_candidate_back_color: 0x34A853  # 选中项背景：鲜明的绿色（类似Google绿）
+      label_color: 0x70C174               # 候选编号浅绿色
+      text_color: 0x1E8E3E                # 高亮文字深绿色
+    
