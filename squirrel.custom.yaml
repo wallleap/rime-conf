@@ -5,7 +5,7 @@ patch:
     color_scheme: purity_of_essence # 预设配色方案名称
     color_scheme_dark: purity_of_form # 暗色预设配色方案名称
     translucency: true # 毛玻璃总开关，不需要关掉即可
-    alpha: 9.5 # 透明度
+    alpha: 0.95 # 透明度
     candidate_list_layout: linear # 候选词列表布局
     showPaging: false # 是否显示分页
     memorize_size: false # 记忆大小
