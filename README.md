@@ -82,16 +82,44 @@ git clone git@github.com:wallleap/rime-conf.git
 
 可以输入 `timestamp` 获取当前时间戳
 
+![](https://cdn.wallleap.cn/img/pic/illustration/20251220145605684.png?imageSlim)
+
 ## 生成 UUID
 
 输入 `uuid` 即可生成一个新的 UUID
 
+例如：
+
+```
+77eb199a-d493-4198-959c-d32eeeead1f6
+```
+
 ## 自定义短语
 
-重命名 `custom_phrase.example.txt` 为 `custom_phrase.txt`，并在里面添加自定义短语
+复制 `custom_phrase.example.txt` 并重命名为 `custom_phrase.txt`，在里面添加自定义短语
 
 一行一个，格式为 `上屏文字` + `缩写` + `权重`，中间用 `Tab` 键分开，例如：
 
 ```
 世界地图  sjdt  2
 ```
+
+输入 `sjdt` 即可显示 `世界地图`
+
+能够输入其他常用的，比如身份证、手机号、邮箱、地址等
+
+## 更新了新的主题
+
+### mac 下
+
+亮色模式
+
+![](https://cdn.wallleap.cn/img/pic/illustration/20251220145106448.png?imageSlim)
+
+暗色模式
+
+![](https://cdn.wallleap.cn/img/pic/illustration/20251220145231695.png?imageSlim)
+
+### win 下
+
+待截图
