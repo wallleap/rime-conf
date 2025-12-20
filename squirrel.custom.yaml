@@ -10,7 +10,7 @@ patch:
     showPaging: false # 是否显示分页
     memorize_size: false # 记忆大小
     inline_preedit: false # 单行显示，false 双行显示
-    inline_candidate: true # 内联候选词
+    inline_candidate: false # 内联候选词
     horizontal: true # 水平排列
     text_orientation: horizontal # 文本方向
     candidate_format: "%c. %@" # 编号 %c 和候选词 %@ 前后的空间
