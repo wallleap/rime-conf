@@ -1,44 +1,62 @@
 patch:
-  show_notifications_via_notification_center: true
+  show_notifications_via_notification_center: true # 使用系统通知中心显示通知
   app_options: {} # 清除应用默认输入法，防止无法输入中文
   style:
-    color_scheme: blue
-    color_scheme_dark: blue_dark
-    translucency: true # 背景半透明总开关，不需要关掉即可
-    alpha: 0.95 # 透明度
+    color_scheme: purity_of_essence # 预设配色方案名称
+    color_scheme_dark: purity_of_form # 暗色预设配色方案名称
+    translucency: true # 毛玻璃总开关，不需要关掉即可
+    alpha: 9.5 # 透明度
+    candidate_list_layout: linear # 候选词列表布局
+    showPaging: false # 是否显示分页
+    memorize_size: false # 记忆大小
+    inline_preedit: false # 单行显示，false 双行显示
+    inline_candidate: true # 内联候选词
     horizontal: true # 水平排列
-    inline_preedit: true # 单行显示，false 双行显示
-    candidate_format: "%c\u2005%@" # 编号 %c 和候选词 %@ 前后的空间
-    corner_radius: 8 # 候选条圆角
-    border_height: 0
-    border_width: 0
+    text_orientation: horizontal # 文本方向
+    candidate_format: "%c. %@" # 编号 %c 和候选词 %@ 前后的空间
+    corner_radius: 12 # 候选条圆角
+    border_height: -2e+0 # 候选条边框高度
+    border_width: -2 # 候选条边框宽度
+    hilited_corner_radius: 12 # 高亮候选词圆角
+    hilited_border_height: 2 # 高亮候选词边框高度
     font_face: "-apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif" # 候选词字体
     font_point: 16 # 候选字词大小
-    label_font_face: "PingFangSC" # 候选词编号字体
+    label_font_face: "-apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif" # 候选词编号字体
     label_font_point: 12 # 候选编号大小
-    color_space: display_p3
+    comment_font_face: "-apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif" # 候选词注释字体
+    comment_font_point: 10 # 候选注释大小
+    surrounding_extra_expansion: 0 # 非候选词周围的空白
+    line_spacing: 1.2 # 行间距
+    spacing: -4 # 候选词与输入框间距
+    base_offset: -2 # 候选词文字偏移
+    shadow_size: 4 # 投影大小
+    color_space: display_p3 # 颜色空间
   preset_color_schemes:
-    blue:
-      name: "蓝色/blue"
-      author: "web"
-      back_color: 0xFFFFFF # 候选条背景色，24位色值，16进制，ABGR顺序
-      border_color: 0xFCF4EB # 边框颜色
-      candidate_text_color: 0x2E2E2E # 预选项文字颜色
-      comment_text_color: 0xE0E0E0 # 拼音等提示文字颜色
-      hilited_candidate_label_color: 0xFFDEA6 # 候选编号颜色
-      hilited_candidate_text_color: 0xF4953C # 候选文字颜色
-      hilited_candidate_back_color: 0xFCF4EB # 候选文字背景色
-      label_color: 0xE0E0E0 # 预选栏编号颜色
-      text_color: 0x2E2E2E # 高亮选中词颜色
-    blue_dark:
-      name: "蓝色暗黑/blue_dark"
-      author: "web"
-      back_color: 0x32271C # 候选条背景色，24位色值，16进制，ABGR顺序
-      border_color: 0x404C58 # 边框颜色
-      candidate_text_color: 0xEEEEEE # 预选项文字颜色
-      comment_text_color: 0xAAAAAA # 拼音等提示文字颜色
-      hilited_candidate_label_color: 0xD9B55F # 候选编号颜色
-      hilited_candidate_text_color: 0xFFB70F # 候选文字颜色
-      hilited_candidate_back_color: 0x6B5439 # 候选文字背景色
-      label_color: 0x666666 # 预选栏编号颜色
-      text_color: 0xFFFFFF # 高亮选中词颜色
+    purity_of_essence:
+      name: 純粹的本質／Purity of Essence
+      author: 佛振
+      color-space: display_p3 # 颜色空间
+      back_color: '0x08ADD3E4' # 整体背景色，可以包含透明度
+      border_color: '0x03152079' # 边框颜色
+      hilited_back_color: '0x0086FAED' # 高亮背景色
+      hilited_candidate_back_color: '0x323E74' # 高亮候选词背景色
+      label_color: '0xA7263364' # 候选词编号颜色
+      text_color: '0x243ADC' # 候选词颜色
+      hilited_text_color: '0x55669C' # 高亮候选词颜色
+      candidate_text_color: '0xE4212A53' # 候选词颜色
+      hilited_candidate_text_color: '0xAEE2EE' # 高亮候选词颜色
+      comment_text_color: '0x69729B' # 候选词注释颜色
+    purity_of_form:
+      name: 純粹的形式／Purity of Form
+      author: 雨過之後、佛振
+      color_space: display_p3
+      back_color: '0xB2444444'
+      border_color: '0x03152079'
+      hilited_back_color: '0x404040'
+      hilited_candidate_back_color: '0x7696BE'
+      label_color: '0x959595'
+      text_color: '0xC4C15C'
+      hilited_text_color: '0xE8E8E8'
+      candidate_text_color: '0xABFFFFFF'
+      hilited_candidate_text_color: '0xCC000000'
+      comment_text_color: '0x959595'
