@@ -6,35 +6,35 @@ patch:
     color_scheme_dark: purity_of_form # 暗色预设配色方案名称
     translucency: true # 毛玻璃总开关，不需要关掉即可
     alpha: 0.95 # 透明度
-    candidate_list_layout: linear # 候选词列表布局
-    showPaging: false # 是否显示分页
-    memorize_size: false # 记忆大小
-    inline_preedit: false # 单行显示，false 双行显示
-    inline_candidate: false # 内联候选词
     horizontal: true # 水平排列
-    text_orientation: horizontal # 文本方向
     candidate_format: "%c. %@" # 编号 %c 和候选词 %@ 前后的空间
-    corner_radius: 12 # 候选条圆角
-    border_height: -2e+0 # 候选条边框高度
-    border_width: -2 # 候选条边框宽度
-    hilited_corner_radius: 12 # 高亮候选词圆角
-    hilited_border_height: 2 # 高亮候选词边框高度
     font_face: "-apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif" # 候选词字体
     font_point: 16 # 候选字词大小
     label_font_face: "-apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif" # 候选词编号字体
     label_font_point: 12 # 候选编号大小
     comment_font_face: "-apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif" # 候选词注释字体
     comment_font_point: 10 # 候选注释大小
-    surrounding_extra_expansion: 0 # 非候选词周围的空白
-    line_spacing: 1.2 # 行间距
-    spacing: -4 # 候选词与输入框间距
-    base_offset: -2 # 候选词文字偏移
-    shadow_size: 4 # 投影大小
     color_space: display_p3 # 颜色空间
   preset_color_schemes:
     purity_of_essence:
       name: 純粹的本質／Purity of Essence
       author: 佛振
+      candidate_list_layout: linear # 候选词列表布局
+      showPaging: false # 是否显示分页
+      memorize_size: false # 记忆大小
+      inline_preedit: false # 单行显示，false 双行显示
+      inline_candidate: false # 内联候选词
+      text_orientation: horizontal # 文本方向
+      corner_radius: 12 # 候选条圆角
+      border_height: -2e+0 # 候选条边框高度
+      border_width: -2 # 候选条边框宽度
+      hilited_corner_radius: 12 # 高亮候选词圆角
+      hilited_border_height: 2 # 高亮候选词边框高度
+      surrounding_extra_expansion: 0 # 非候选词周围的空白
+      line_spacing: 1.2 # 行间距
+      spacing: -4 # 候选词与输入框间距
+      base_offset: -2 # 候选词文字偏移
+      shadow_size: 4 # 投影大小
       color-space: display_p3 # 颜色空间
       back_color: '0x08ADD3E4' # 整体背景色，可以包含透明度
       border_color: '0x03152079' # 边框颜色
@@ -49,6 +49,22 @@ patch:
     purity_of_form:
       name: 純粹的形式／Purity of Form
       author: 雨過之後、佛振
+      candidate_list_layout: linear # 候选词列表布局
+      showPaging: false # 是否显示分页
+      memorize_size: false # 记忆大小
+      inline_preedit: false # 单行显示，false 双行显示
+      inline_candidate: false # 内联候选词
+      text_orientation: horizontal # 文本方向
+      corner_radius: 12 # 候选条圆角
+      border_height: -2e+0 # 候选条边框高度
+      border_width: -2 # 候选条边框宽度
+      hilited_corner_radius: 12 # 高亮候选词圆角
+      hilited_border_height: 2 # 高亮候选词边框高度
+      surrounding_extra_expansion: 0 # 非候选词周围的空白
+      line_spacing: 1.2 # 行间距
+      spacing: -4 # 候选词与输入框间距
+      base_offset: -2 # 候选词文字偏移
+      shadow_size: 4 # 投影大小
       color_space: display_p3
       back_color: '0xB2444444'
       border_color: '0x03152079'
