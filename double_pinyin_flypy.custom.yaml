@@ -1,0 +1,97 @@
+# 小鹤双拼个人定制版
+# encoding: utf-8
+patch:
+  # 增加 emoji 输入开关
+  switches/+:
+    - name: emoji_suggestion
+      reset: 1
+      states: ["🈚️️", "🈶️"]
+
+  # 增加 emoji 输入功能
+  emoji_suggestion:
+    opencc_config: emoji.json
+    option_name: emoji_suggestion
+    tips: all
+
+  # 增加自定义的 translator 和 filter
+  engine/translators/+:
+    - table_translator@custom_phrase          # 用户自定义词典
+    - lua_translator@date_translator          # 动态日期时间输入
+    - table_translator@user_history           # 用户历史词汇
+    - lua_translator@user_learning_translator # 用户习惯学习
+    - lua_translator@uuid_translator          # UUID 输入
+  engine/filters/+:
+    - simplifier@emoji_suggestion             # emoji 输入
+  
+  # 增加模糊音设置选项
+  speller/algebra/+:
+    # 模糊音区域 依据个人情况修改注释～
+    # 声母部分
+    # - derive/^([z])h/$1/ # zh => z
+    # - derive/^([z])([^h])/$1h$2/ # z => zh
+    # - derive/^([c])h/$1/ # ch => c
+    # - derive/^([c])([^h])/$1h$2/ # c => ch
+    # - derive/^([s])h/$1/ # sh => s
+    # - derive/^([s])([^h])/$1h$2/ # s => sh
+    # - derive/^l/n/ # l => n
+    # - derive/^n/l/ # n => l
+    # - derive/^r/l/ # r => l
+    # - derive/^r/y/ # r => y
+    # - derive/^hu$/fu/ # hu => fu
+    # - derive/^fu$/hu/ # fu => hu
+    # 韵母部分
+    # - derive/([^iu])([a])n$/$1$2ng/ # an => ang
+    # - derive/([^iu])([a])ng$/$1$2n/ # ang => an
+    # - derive/([e])n$/$1ng/ # en => eng
+    # - derive/([e])ng$/$1n/ # eng => en
+    # - derive/([i])n$/$1ng/ # in => ing
+    # - derive/([i])ng$/$1n/ # ing => in
+    # - derive/([i])an$/$1ang/ # ian => iang
+    # - derive/([i])ang$/$1an/ # iang => ian
+    # 由于小鹤双拼特性，无需 uang <=> iang
+    # 其它模糊音
+    #- derive/^hui$/fei/ # hui => fei
+    #- derive/^fei$/hui/ # fei => hui
+    #- derive/^huang$/wang/ # huang => wang
+    #- derive/^wang$/huang/ # wang => huang
+  
+  # translator 配置
+  # 这里完整替换掉了 translator 配置
+  translator:
+    dictionary: extended
+    prism: double_pinyin_flypy
+    preedit_format: []
+
+  # 增加 grammar 配置
+  grammar:
+    language: zh-hans-t-essay-bgw
+
+  # 增加 punctuator 配置
+  punctuator:
+    import_preset: symbols
+    full_shape:
+    symbols:
+      "/help": [ 符号：/fh, 单位：/dw, 标点：/bd, 数学：/sx, 拼音：/py, 星号：/xh, 方块：/fk, 几何：/jh, 箭头：/jt, 电脑：/dn, 罗马数字：/lm, 大写罗马数字：/lmd, 拉丁：/ld, 上标：/sb, 下标：/xb, 希腊字母：/xl, 大写希腊字母：/xld, 数字：/0到/9, 分数：/fs, いろは順：/iro, 假名：/jm或/pjm或/jmk到/jmo, 假名+圈：/jmq, 假名+半角：/jmbj, 俄语：/ey, 大写俄语：/eyd, 韩文：/hw, 韩文+圈：/hwq, 韩文+弧：/hwh, 结构：/jg, 偏旁：/pp, 康熙（部首）：/kx, 笔画：/bh, 注音：/zy, 声调：/sd, 汉字+圈：/hzq, 汉字+弧：/hzh, 数字+圈：/szq, 数字+弧：/szh, 数字+点：/szd, 字母+圈：/zmq, 字母+弧：/zmh, 表情：/bq, 音乐：/yy, 月份：/yf, 日期：/rq, 曜日：/yr, 时间：/sj, 天干：/tg, 地支：/dz, 干支：/gz, 节气：/jq, 象棋：/xq, 麻将：/mj, 色子：/sz, 扑克：/pk, 八卦：/bg, 八卦名：/bgm, 六十四卦：/lssg, 六十四卦名：/lssgm, 太玄经：/txj, 天体：/tt, 星座：/xz, 星座名：/xzm, 十二宫：/seg, 苏州码：/szm ]
+    half_shape:
+      "/": ["/", "÷"]
+
+  # 修改 recognizer 配置，支持数字开头输入
+  recognizer/patterns/punct: "^/([0-9]+[a-z]*|[a-z]+)$"
+
+  # 自定义用户词典和历史记录词典配置
+  custom_phrase:
+    dictionary: ""
+    user_dict: custom_phrase
+    db_class: stabledb
+    enable_completion: false
+    enable_sentence: true
+    initial_quality: 1
+  user_history:
+    dictionary: ""
+    user_dict: user_history
+    db_class: userdb
+    enable_completion: false
+    enable_sentence: false
+    initial_quality: 10
+    enable_user_dict: true
+    record_history: true
