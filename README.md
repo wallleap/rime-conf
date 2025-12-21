@@ -117,6 +117,16 @@ git clone git@github.com:wallleap/rime-conf.git
 77eb199a-d493-4198-959c-d32eeeead1f6
 ```
 
+## 修改方案/切换功能
+
+使用快捷键 <kbd>⌃</kbd> + <kbd>\`</kbd> 或 <kbd>F4</kbd> 快捷键调出方案选择菜单
+
+![](https://cdn.wallleap.cn/img/pic/illustration/20251221225315139.png?imageSlim)
+
+选中并按空格选择切换方案，或者切换某个功能
+
+![](https://cdn.wallleap.cn/img/pic/illustration/20251221225504693.png?imageSlim)
+
 ## 自定义短语
 
 复制 `custom_phrase.example.txt` 并重命名为 `custom_phrase.txt`，在里面添加自定义短语
@@ -146,3 +156,56 @@ git clone git@github.com:wallleap/rime-conf.git
 ### win 下
 
 待截图
+
+## 修改配置
+
+可以参考官方仓库文件进行修改定制：
+
+- `default.custom.yaml`：<https://github.com/rime/librime/blob/master/data/minimal/default.yaml>
+- `sequirrel.custom.yaml`：<https://github.com/rime/squirrel/blob/master/data/squirrel.yaml>
+- `weasel.custom.yaml`：<https://github.com/rime/weasel/blob/master/output/data/weasel.yaml>
+
+如果需要使用全拼，可以修改 `default.custom.yaml` 文件，在 `schema_list` 后面添加 `/+`，这样就能使用默认的全拼方案了
+
+```yaml
+patch:
+  schema_list/+:
+    - schema: double_pinyin_flypy
+```
+
+## 增加词库
+
+参考 `dicts` 文件夹中的文件格式添加内容/使用工具转换并添加上对应的顶部信息，然后修改 `extended.dict.yaml` 配置，将对应的词库文件名添加进去即可
+
+## 同步用户数据
+
+右击 Rime 图标，点击【同步用户数据】，会自动创建一个 `installation.yaml` 文件
+
+和一个 `sync` 目录，里面会记录用户的自定义词库和学习词库等内容
+
+那么只要把这个 `sync` 目录设置成所有设备都能访问到的即可（例如 iCloud Drive、Dropbox 等云盘同步目录）
+
+修改 `installation.yaml` 文件，添加 `sync_dir` 字段，改成同步目录的路径
+
+```yaml
+sync_dir: "/Users/luwang/Library/Mobile Documents/iCloud~com~jimmy54~iRime/Documents/sync"
+```
+
+如果是 windows 系统，需要使用 `'` 单引号，或者使用 `\\` 双反斜杠（因为 yaml 文件中 `\` 是转义符，会把后面的字母转义），例如：
+
+```yaml
+sync_dir: 'C:\Users\luwang\AppData\...\iCloud Drive\iRime\sync'
+```
+
+或
+
+```yaml
+sync_dir: "C:\\Users\\luwang\\AppData\\...\\iCloud Drive\\iRime\\sync"
+```
+
+## 参考资料
+
+- [Rime 官方文档](https://rime.im/docs/)
+- [Rime 官方仓库](https://github.com/rime)
+- [小鹤双拼输入法介绍](http://www.flypy.com/)
+- [rime-ice](https://github.com/iDvel/rime-ice)
