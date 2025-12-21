@@ -11,17 +11,18 @@
 #
 # encoding: utf-8
 patch:
-  # 增加 emoji 输入开关
+  ## 输入文字时候选栏能出现 emoji
   switches/+:
     - name: emoji_suggestion
       reset: 1
       states: ["🈚️️", "🈶️"]
-
-  # 增加 emoji 输入功能
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     tips: all
+  # 增加 emoji 输入过滤器，确保在第一个
+  'engine/filters/@before 0':
+    simplifier@emoji_suggestion               # emoji 输入过滤器
 
   # 增加自定义的 translator 和 filter
   engine/translators/+:
@@ -31,10 +32,6 @@ patch:
     - lua_translator@user_learning_translator # 用户习惯学习
     - lua_translator@uuid_translator          # UUID 输入
 
-  # 增加 emoji 输入过滤器，确保在第一个  
-  'engine/filters/@before 0':
-    simplifier@emoji_suggestion               # emoji 输入过滤器
-  
   # 增加模糊音设置选项
   speller/algebra/+:
     # 模糊音区域 依据个人情况修改注释～
