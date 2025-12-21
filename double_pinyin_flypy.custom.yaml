@@ -32,8 +32,24 @@ patch:
     - lua_translator@user_learning_translator # 用户习惯学习
     - lua_translator@uuid_translator          # UUID 输入
 
-  # 增加模糊音设置选项
+  ## 辅助码音形分离
+  engine/filters/+:
+    - lua_filter@*aux_code@flypy_full
+  speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA#
+  key_binder/+:
+    aux_code_trigger: "#"  # 使用#作为辅助码触发键
+    bindings:
+      # 禁用前翻页键 "."
+      - { when: has_menu, accept: period, send: period }
+      # 禁用后翻页键 ","
+      - { when: has_menu, accept: comma, send: comma }
+    show_aux_notice: true  # 设置是否显示辅助码字母提示
   speller/algebra/+:
+    # 简拼支持
+    - abbrev/^(.).+$/$1/
+
+  # 增加模糊音设置选项
+  # speller/algebra/+:
     # 模糊音区域 依据个人情况修改注释～
     # 声母部分
     # - derive/^([z])h/$1/ # zh => z
