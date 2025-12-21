@@ -6,6 +6,8 @@
 # 4. 如果是新增的配置项，或替换某个配置，则直接写入即可，例如 a: value
 # 如果原文件中有这个配置，则会被覆盖，如果没有，则会新增
 # 5. 如果是列表/字典，则使用 /+ 号，添加到最后面，例如 a/b/+: value
+# 还能使用 @before n、@after last、@n、@next、@last 等方式，在指定位置插入
+# 但需要注意写法，可以查看 'engine/filters/@before 0' 处的用法
 #
 # encoding: utf-8
 patch:
@@ -28,8 +30,10 @@ patch:
     - table_translator@user_history           # 用户历史词汇
     - lua_translator@user_learning_translator # 用户习惯学习
     - lua_translator@uuid_translator          # UUID 输入
-  engine/filters/+:
-    - simplifier@emoji_suggestion             # emoji 输入
+
+  # 增加 emoji 输入过滤器，确保在第一个  
+  'engine/filters/@before 0':
+    simplifier@emoji_suggestion               # emoji 输入过滤器
   
   # 增加模糊音设置选项
   speller/algebra/+:
