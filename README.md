@@ -2,7 +2,7 @@
 
 实现的效果：
 
-- [x] 只保留小鹤双拼方案（通过 `default.custom.yaml` 文件中直接覆盖 `schema_list` 默认配置实现）
+- [x] ~~只保留小鹤双拼方案（通过 `default.custom.yaml` 文件中直接覆盖 `schema_list` 默认配置实现）~~把小鹤双拼放到第一个，保留默认的全拼方案，方便切换
 - [x] 调一个舒适的外观，支持 mac 下暗黑模式（`squirrel.custom.yaml`）
 - [x] 只使用 Rime 的中文，英文留给系统输入法（快捷键切换 <kbd>Control</kbd> + <kbd>Space</kbd>）  
 - [x] 不需要 emoji，用系统自带的
@@ -121,7 +121,7 @@ git clone git@github.com:wallleap/rime-conf.git
 
 使用快捷键 <kbd>⌃</kbd> + <kbd>\`</kbd> 或 <kbd>F4</kbd> 快捷键调出方案选择菜单
 
-![](https://cdn.wallleap.cn/img/pic/illustration/20251221225315139.png?imageSlim)
+![](https://cdn.wallleap.cn/img/pic/illustration/20251221230947272.png?imageSlim)
 
 选中并按空格选择切换方案，或者切换某个功能
 
@@ -164,14 +164,6 @@ git clone git@github.com:wallleap/rime-conf.git
 - `default.custom.yaml`：<https://github.com/rime/librime/blob/master/data/minimal/default.yaml>
 - `sequirrel.custom.yaml`：<https://github.com/rime/squirrel/blob/master/data/squirrel.yaml>
 - `weasel.custom.yaml`：<https://github.com/rime/weasel/blob/master/output/data/weasel.yaml>
-
-如果需要使用全拼，可以修改 `default.custom.yaml` 文件，在 `schema_list` 后面添加 `/+`，这样就能使用默认的全拼方案了
-
-```yaml
-patch:
-  schema_list/+:
-    - schema: double_pinyin_flypy
-```
 
 ## 增加词库
 

@@ -1,6 +1,6 @@
 patch:
-  schema_list:
-    - schema: double_pinyin_flypy
+  'schema_list/@before 0':
+    schema: double_pinyin_flypy
   menu/page_size: 4 # 候选项数
   # 用户习惯学习配置
   "translator/enable_user_dict": true
