@@ -35,9 +35,9 @@ patch:
   ## 辅助码音形分离
   engine/filters/+:
     - lua_filter@*aux_code@flypy_full
-  speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA/
+  speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA#
   key_binder/+:
-    aux_code_trigger: "/"  # 使用#作为辅助码触发键
+    aux_code_trigger: "#"  # 使用#作为辅助码触发键
     bindings:
       # 禁用前翻页键 "."
       - { when: has_menu, accept: period, send: period }
