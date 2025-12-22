@@ -2,7 +2,7 @@
 
 实现的效果：
 
-- [x] ~~只保留小鹤双拼方案（通过 `default.custom.yaml` 文件中直接覆盖 `schema_list` 默认配置实现）~~把小鹤双拼放到第一个，保留默认的全拼方案，方便切换
+- [x] ~~只保留小鹤双拼方案~~ 把小鹤双拼放到第一个，保留默认的全拼方案，方便切换
 - [x] 调一个舒适的外观，支持 mac 下暗黑模式（`squirrel.custom.yaml`）
 - [x] 只使用 Rime 的中文，英文留给系统输入法（快捷键切换 <kbd>Control</kbd> + <kbd>Space</kbd>）  
 - [x] 不需要 emoji，用系统自带的
@@ -78,9 +78,9 @@ git clone git@github.com:wallleap/rime-conf.git
 
 ## 查看辅助码
 
-可以在输入文字后按 <kbd>/</kbd> 键查看辅助码提示，后面接着输入辅助码即可定字
+可以在输入文字后按 <kbd>#</kbd> 键查看辅助码提示，后面接着输入辅助码即可定字
 
-![](https://cdn.wallleap.cn/img/pic/illustration/20251222132049632.png?imageSlim)
+![](https://cdn.wallleap.cn/img/pic/illustration/20251222165305519.png?imageSlim)
 
 ## 选词
 
@@ -174,7 +174,7 @@ git clone git@github.com:wallleap/rime-conf.git
 可以参考官方仓库文件进行修改定制：
 
 - `default.custom.yaml`：<https://github.com/rime/librime/blob/master/data/minimal/default.yaml>
-- `sequirrel.custom.yaml`：<https://github.com/rime/squirrel/blob/master/data/squirrel.yaml>
+- `squirrel.custom.yaml`：<https://github.com/rime/squirrel/blob/master/data/squirrel.yaml>
 - `weasel.custom.yaml`：<https://github.com/rime/weasel/blob/master/output/data/weasel.yaml>
 
 ## 增加词库
@@ -214,3 +214,4 @@ sync_dir: "C:\\Users\\luwang\\AppData\\...\\iCloud Drive\\iRime\\sync"
 - [小鹤双拼输入法介绍](http://www.flypy.com/)
 - [rime-ice](https://github.com/iDvel/rime-ice)
 - [rime-lua-aux-code](https://github.com/HowcanoeWang/rime-lua-aux-code)
+- [LufsX/rime](https://github.com/LufsX/rime)
