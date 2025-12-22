@@ -34,7 +34,7 @@ patch:
       surrounding_extra_expansion: 0 # 非候选词周围的空白
       line_spacing: 1.2 # 行间距
       spacing: -4 # 候选词与输入框间距
-      base_offset: -2 # 候选词文字偏移
+      base_offset: -6.5 # 候选词文字偏移
       shadow_size: 4 # 投影大小
       color-space: display_p3 # 颜色空间
       back_color: '0x08ADD3E4' # 整体背景色，可以包含透明度
@@ -64,7 +64,7 @@ patch:
       surrounding_extra_expansion: 0 # 非候选词周围的空白
       line_spacing: 1.2 # 行间距
       spacing: -4 # 候选词与输入框间距
-      base_offset: -2 # 候选词文字偏移
+      base_offset: -6.5 # 候选词文字偏移
       shadow_size: 4 # 投影大小
       color_space: display_p3
       back_color: '0xB2444444'
