@@ -155,7 +155,13 @@ git clone git@github.com:wallleap/rime-conf.git
 
 ### win 下
 
-待截图
+亮色模式
+
+![](https://cdn.wallleap.cn/img/pic/illustration/20251222112219455.png?imageSlim)
+
+暗色模式
+
+![](https://cdn.wallleap.cn/img/pic/illustration/20251222112233299.png?imageSlim)
 
 ## 修改配置
 
