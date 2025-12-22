@@ -76,6 +76,12 @@ git clone git@github.com:wallleap/rime-conf.git
 
 > 本方案去除了模糊音（例如 z → zh）和简码（例如键入 q 就能显示 去 等字），即一定要最少键入两个键才能显示具体文字，且不会因为模糊音占用候选项位
 
+## 查看辅助码
+
+可以在输入文字后按 <kbd>/</kbd> 键查看辅助码提示，后面接着输入辅助码即可定字
+
+![](https://cdn.wallleap.cn/img/pic/illustration/20251222132049632.png?imageSlim)
+
 ## 选词
 
 除了常规的翻页，还增加了：
@@ -207,3 +213,4 @@ sync_dir: "C:\\Users\\luwang\\AppData\\...\\iCloud Drive\\iRime\\sync"
 - [Rime 官方仓库](https://github.com/rime)
 - [小鹤双拼输入法介绍](http://www.flypy.com/)
 - [rime-ice](https://github.com/iDvel/rime-ice)
+- [rime-lua-aux-code](https://github.com/HowcanoeWang/rime-lua-aux-code)
