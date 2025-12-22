@@ -46,3 +46,19 @@ function uuid_translator(input, seg)
     local uuid_func = load_uuid_translator()
     return uuid_func(input, seg)
 end
+
+-- aux_code: 辅助码拆分模块 filter
+-- 文件在 `lua/aux_code.lua`
+local aux_code_module = nil
+
+local function load_aux_code()
+    if not aux_code_module then
+        aux_code_module = require("aux_code")
+    end
+    return aux_code_module
+end
+
+function aux_code_filter(input, seg)
+    local aux_code = load_aux_code()
+    return aux_code(input, seg)
+end
