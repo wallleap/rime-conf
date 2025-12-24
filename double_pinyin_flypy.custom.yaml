@@ -21,11 +21,14 @@ patch:
     option_name: emoji_suggestion
     tips: all
   # 增加 emoji 输入过滤器，确保在第一个
-  'engine/filters/@before 0':
-    simplifier@emoji_suggestion               # emoji 输入过滤器
+  # 'engine/filters/@before 0':
+  #   simplifier@emoji_suggestion               # emoji 输入过滤器
 
-  # 增加自定义的 translator 和 filter
-  engine/translators/+:
+  # 增加自定义的 translator 和 filter 避免有的平台不一致，直接覆盖
+  engine/translators:
+    - punct_translator
+    - reverse_lookup_translator
+    - script_translator
     - table_translator@custom_phrase          # 用户自定义词典
     - lua_translator@date_translator          # 动态日期时间输入
     - table_translator@user_history           # 用户历史词汇
@@ -33,20 +36,23 @@ patch:
     - lua_translator@uuid_translator          # UUID 输入
 
   ## 辅助码音形分离
-  engine/filters/+:
+  engine/filters:
+    - simplifier@emoji_suggestion
+    - simplifier
+    - uniquifier
     - lua_filter@*aux_code@flypy_full
   speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA#
   key_binder/+:
     aux_code_trigger: "#"  # 使用#作为辅助码触发键
     bindings:
+      # #号键作为辅助码触发键
+      - { when: composing, accept: numbersign, send: numbersign }
+      - { when: composing, accept: Shift+3, send: numbersign }
       # 禁用前翻页键 "."
       - { when: has_menu, accept: period, send: period }
       # 禁用后翻页键 ","
       - { when: has_menu, accept: comma, send: comma }
     show_aux_notice: true  # 设置是否显示辅助码字母提示
-  speller/algebra/+:
-    # 简拼支持
-    - abbrev/^(.).+$/$1/
 
   # 增加模糊音设置选项
   # speller/algebra/+:
