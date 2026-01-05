@@ -39,6 +39,7 @@ patch:
     - simplifier
     - uniquifier
     - lua_filter@*aux_code@flypy_full         # 辅助码音形分离过滤器
+    - lua_filter@*is_in_user_dict             # 是否在用户词典中
 
   ## 辅助码音形分离
   speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA#
@@ -123,3 +124,6 @@ patch:
     initial_quality: 10
     enable_user_dict: true
     record_history: true
+
+  # lua 配置 -- 是否在用户词典中
+  is_in_user_dict: true

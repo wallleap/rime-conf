@@ -15,6 +15,17 @@ function date_translator(input, seg)
     return translator(input, seg)
 end
 
+-- is_in_user_dict: 是否在用户词典
+-- 文件在 `lua/is_in_user_dict.lua`
+local is_in_user_dict_module = nil
+
+local function load_is_in_user_dict()
+    if not is_in_user_dict_module then
+        is_in_user_dict_module = require("is_in_user_dict")
+    end
+    return is_in_user_dict_module
+end
+
 -- user_learning: 用户习惯学习模块
 -- 文件在 `lua/user_learning.lua`
 local user_learning_module = nil
