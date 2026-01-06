@@ -34,12 +34,29 @@ patch:
     - table_translator@user_history           # 用户历史词汇
     - lua_translator@user_learning_translator # 用户习惯学习
     - lua_translator@uuid_translator          # UUID 输入
+    - table_translator@radical_lookup         # 部件拆字反查
   engine/filters:
     - simplifier@emoji_suggestion
     - simplifier
     - uniquifier
     - lua_filter@*aux_code@flypy_full         # 辅助码音形分离过滤器
     - lua_filter@*is_in_user_dict             # 是否在用户词典中
+
+  # 添加拆字方案依赖
+  schema/dependencies:
+    - radical
+
+  # 配置拆字反查
+  radical_lookup:
+    dictionary: radical_flypy
+    enable_completion: true
+    enable_user_dict: false
+    enable_sentence: false
+    prefix: "#"
+    tips: 〔拆字〕
+
+  # 配置识别器模式，#开头且后面紧跟字母时为拆字
+  recognizer/patterns/radical_lookup: "^#[a-z]"
 
   ## 辅助码音形分离
   speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA#
