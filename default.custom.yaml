@@ -1,6 +1,10 @@
 patch:
   'schema_list/@before 0':
-    schema: double_pinyin_flypy
+    schema: double_pinyin_flypy                   # 设置当前方案为小鹤双拼
+  schema_list/+:
+    # 添加拆字方案
+    - schema: radical                             # 双拼拆字方案
+    - schema: radical_pinyin                      # 部件拆字 + 全拼双拼
   menu/page_size: 4 # 候选项数
   # 用户习惯学习配置
   "translator/enable_user_dict": true
