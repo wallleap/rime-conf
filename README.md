@@ -10,7 +10,7 @@
 - [x] 加入一些常用的自定义短语文本
 - [x] 转换自己的词库并加入
 - [x] 加入八股文（语言数据模型），让长句联想更准确
-- [ ] 拆字词库，不知道文字的拼音的时候用，例如先按 <kbd>Ctrl</kbd> + <kbd>u</kbd> 再输入单字（搜狗的 u 模式）  
+- [x] 拆字词库，不知道文字的拼音的时候用，例如先按 <kbd>a</kbd> + <kbd>u</kbd> 再输入单字（搜狗的 u 模式）  
 - [x] 添加 `/` 加 `fh` 显示符号之类的操作
 - [x] 支持使用 <kbd>【</kbd>/<kbd>】</kbd>、<kbd>Control</kbd> + <kbd>j</kbd>/<kbd>k</kbd> 切换上/下页  
 - [x] 支持时间和日期动态输入  
@@ -81,6 +81,22 @@ git clone git@github.com:wallleap/rime-conf.git
 可以在输入文字后按 <kbd>#</kbd> 键查看辅助码提示，后面接着输入辅助码即可定字
 
 ![](https://cdn.wallleap.cn/img/pic/illustration/20251222165305519.png?imageSlim)
+
+## 拆字输入
+
+输入 `au` 进入拆字模式，后面接着输入单字的双拼即可拆字输入
+
+![](https://cdn.wallleap.cn/img/pic/illustration/20260106165315124.png?imageSlim)
+
+例如输入 焱 可以先输入 `au` 再输入 `hohoho` （火火火）
+
+![](https://cdn.wallleap.cn/img/pic/illustration/20260106165530168.png?imageSlim)
+
+还可以直接切换方案为拆字方案，使用快捷键 <kbd>⌃</kbd> + <kbd>`</kbd> 或 <kbd>F4</kbd>，选择【部件拆字 | 双拼拆字】或者【部件拆字 | 全拼双拼】
+
+![](https://cdn.wallleap.cn/img/pic/illustration/20260106165812651.png?imageSlim)
+
+接着输入 `hohoho`（小鹤双拼） 或 `huohuohuo`（全拼） 即可输入 焱
 
 ## 选词
 
