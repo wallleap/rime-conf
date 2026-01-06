@@ -34,7 +34,14 @@ patch:
     - table_translator@user_history           # 用户历史词汇
     - lua_translator@user_learning_translator # 用户习惯学习
     - lua_translator@uuid_translator          # UUID 输入
-    - table_translator@radical_lookup         # 部件拆字反查
+    - reverse_lookup_translator@radical_reverse_lookup  # 拆字反查功能
+  engine/segmentors:
+    - ascii_segmentor
+    - matcher
+    - affix_segmentor@radical_reverse_lookup   # 引入的反查
+    - abc_segmentor             # 標識常規的文字段落
+    - punct_segmentor           # 標識句讀段落
+    - fallback_segmentor        # 標識其他未標識段落
   engine/filters:
     - simplifier@emoji_suggestion
     - simplifier
@@ -44,19 +51,20 @@ patch:
 
   # 添加拆字方案依赖
   schema/dependencies:
-    - radical
+    - radical_pinyin
 
   # 配置拆字反查
-  radical_lookup:
+  radical_reverse_lookup:
+    tag: radical_lookup
     dictionary: radical_flypy
-    enable_completion: true
-    enable_user_dict: false
+    enable_completion: false
     enable_sentence: false
-    prefix: "#"
+    prefix: "au"
+    suffix: ""
     tips: 〔拆字〕
 
-  # 配置识别器模式，#开头且后面紧跟字母时为拆字
-  recognizer/patterns/radical_lookup: "^#[a-z]"
+  # 配置识别器模式，au开头时为拆字
+  recognizer/patterns/radical_lookup: "^au[a-z]*'?$"
 
   ## 辅助码音形分离
   speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA#
