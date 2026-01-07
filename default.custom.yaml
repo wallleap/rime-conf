@@ -1,7 +1,8 @@
 patch:
-  'schema_list/@before 0':
-    schema: double_pinyin_flypy                   # 设置当前方案为小鹤双拼
-  schema_list/+:
+  # 'schema_list/@before 0':
+  #   schema: double_pinyin_flypy                   # 设置当前方案为小鹤双拼
+  schema_list:
+    - schema: double_pinyin_flypy                   # 设置当前方案为小鹤双拼
     # 添加拆字方案
     - schema: radical                             # 双拼拆字方案
     - schema: radical_pinyin                      # 部件拆字 + 全拼双拼
