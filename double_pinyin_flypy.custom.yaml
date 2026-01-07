@@ -29,11 +29,11 @@ patch:
     - punct_translator
     - reverse_lookup_translator
     - script_translator
-    - table_translator@custom_phrase          # 用户自定义词典
-    - lua_translator@date_translator          # 动态日期时间输入
-    - table_translator@user_history           # 用户历史词汇
-    - lua_translator@user_learning_translator # 用户习惯学习
-    - lua_translator@uuid_translator          # UUID 输入
+    - table_translator@custom_phrase           # 用户自定义词典
+    - table_translator@user_history            # 用户历史词汇
+    - lua_translator@*date_translator          # 动态日期时间输入
+    - lua_translator@*user_learning_translator # 用户习惯学习
+    - lua_translator@*uuid_translator          # UUID 输入
     - reverse_lookup_translator@radical_reverse_lookup  # 拆字反查功能
   engine/segmentors:
     - ascii_segmentor
@@ -43,7 +43,7 @@ patch:
     - punct_segmentor           # 標識句讀段落
     - fallback_segmentor        # 標識其他未標識段落
   engine/filters:
-    - simplifier@emoji_suggestion
+    - simplifier@emoji_suggestion             # emoji 输入过滤器
     - simplifier
     - uniquifier
     - lua_filter@*aux_code@flypy_full         # 辅助码音形分离过滤器
