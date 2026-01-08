@@ -67,7 +67,7 @@ patch:
   recognizer/patterns/radical_lookup: "^au[a-z]*'?$"
 
   ## 辅助码音形分离
-  speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA#
+  speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA#`!
   key_binder/+:
     aux_code_trigger: "#"  # 使用#作为辅助码触发键
     bindings:
@@ -75,6 +75,9 @@ patch:
       - { when: composing, accept: numbersign, send: numbersign }
       - { when: composing, accept: Shift+3, send: numbersign }
     show_aux_notice: true  # 设置是否显示辅助码字母提示
+
+  # 分隔符设置
+  speller/delimiter: " !"  # 第一位<空格>是拼音之间的分隔符；第二位<!>表示可以手动输入单引号来分割拼音。
 
   # 增加模糊音设置选项
   # speller/algebra/+:
