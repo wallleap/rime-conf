@@ -228,4 +228,5 @@ sync_dir: "C:\\Users\\luwang\\AppData\\...\\iCloud Drive\\iRime\\sync"
 - [小鹤双拼输入法介绍](http://www.flypy.com/)
 - [rime-ice](https://github.com/iDvel/rime-ice)
 - [rime-lua-aux-code](https://github.com/HowcanoeWang/rime-lua-aux-code)
+- [rime-radical-pinyin](https://github.com/mirtlecn/rime-radical-pinyin)
 - [LufsX/rime](https://github.com/LufsX/rime)
