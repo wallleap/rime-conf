@@ -3,9 +3,10 @@ patch:
   #   schema: double_pinyin_flypy                   # 设置当前方案为小鹤双拼
   schema_list:
     - schema: double_pinyin_flypy                   # 设置当前方案为小鹤双拼
+    - schema: pinyin_simp                           # 袖珍简化字拼音
     # 添加拆字方案
-    - schema: radical                             # 双拼拆字方案
-    - schema: radical_pinyin                      # 部件拆字 + 全拼双拼
+    - schema: radical                               # 双拼拆字方案
+    - schema: radical_pinyin                        # 部件拆字 + 全拼双拼
   menu/page_size: 4 # 候选项数
   # 用户习惯学习配置
   "translator/enable_user_dict": true
