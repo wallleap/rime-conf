@@ -79,7 +79,46 @@ patch:
   # 分隔符设置
   speller/delimiter: " !"  # 第一位<空格>是拼音之间的分隔符；第二位<!>表示可以手动输入单引号来分割拼音。
 
-  speller/algebra/+:
+  # 覆盖默认的 algebra 配置
+  speller/algebra:
+    - erase/^xx$/
+    # 万象词库转写
+    - xlit/āáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜü/aaaaooooeeeeiiiiuuuuvvvvv/
+    - xform/^ng$/eng/
+    - xform/ńg|ňg|ǹg/eng/
+    - xform/ń|ň|ǹ/en/ 
+    - xform/ḿ/m/
+    # 小鹤双拼转写
+    - derive/^([jqxy])u$/$1v/
+    - derive/^([aoe])([ioun])$/$1$1$2/
+    - xform/^([aoe])(ng)?$/$1$1$2/
+    - xform/iu$/Q/
+    - xform/(.)ei$/$1W/
+    - xform/uan$/R/
+    - xform/[uv]e$/T/
+    - xform/un$/Y/
+    - xform/^sh/U/
+    - xform/^ch/I/
+    - xform/^zh/V/
+    - xform/uo$/O/
+    - xform/ie$/P/
+    - xform/i?ong$/S/
+    - xform/ing$|uai$/K/
+    - xform/(.)ai$/$1D/
+    - xform/(.)en$/$1F/
+    - xform/(.)eng$/$1G/
+    - xform/[iu]ang$/L/
+    - xform/(.)ang$/$1H/
+    - xform/ian$/M/
+    - xform/(.)an$/$1J/
+    - xform/(.)ou$/$1Z/
+    - xform/[iu]a$/X/
+    - xform/iao$/N/
+    - xform/(.)ao$/$1C/
+    - xform/ui$/V/
+    - xform/in$/B/
+    - xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/
+    # 单字简拼：输入首字母即可匹配
     - derive/^([a-z])[a-z]+$/$1/  # 单字简拼：输入首字母即可匹配
     - derive/^([a-z])([a-z])$/$1$2/  # 双字词简拼（可选，增强）
     # 模糊音区域 依据个人情况修改注释～
@@ -107,10 +146,10 @@ patch:
     # - derive/([i])ang$/$1an/ # iang => ian
     # 由于小鹤双拼特性，无需 uang <=> iang
     # 其它模糊音
-    #- derive/^hui$/fei/ # hui => fei
-    #- derive/^fei$/hui/ # fei => hui
-    #- derive/^huang$/wang/ # huang => wang
-    #- derive/^wang$/huang/ # wang => huang
+    # - derive/^hui$/fei/ # hui => fei
+    # - derive/^fei$/hui/ # fei => hui
+    # - derive/^huang$/wang/ # huang => wang
+    # - derive/^wang$/huang/ # wang => huang
   
   # translator 配置
   # 这里完整替换掉了 translator 配置
